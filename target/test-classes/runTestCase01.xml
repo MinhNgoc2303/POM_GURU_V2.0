@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NgocTest" parallel="tests">
+
+	<test name="TestWithFF">
+	<parameter name ="browser" value="firefox" />
+	<parameter name ="version" value="0.21.0" />
+	<parameter name ="url" value="http://demo.guru99.com/v4/" />
+	
+		<classes>
+			<class name="com.bankguru.scripts.RegisterNewAccountScript" />
+			<class name="com.bankguru.scripts.NewCustomerScript" />
+			<class name="com.bankguru.scripts.EditCustomerScript" />
+		</classes>
+		</test> <!-- Test-->
+
+	<test name="TestWithChrome">
+	<parameter name ="browser" value="chrome" />
+	<parameter name ="version" value="76.0.3809.68" />
+	<parameter name ="url" value="http://demo.guru99.com/v4/" />
+	
+		<classes>
+			<class name="com.bankguru.scripts.RegisterNewAccountScript" />
+			<class name="com.bankguru.scripts.NewCustomerScript" />
+			<class name="com.bankguru.scripts.EditCustomerScript" />
+		</classes>
+ 		</test> <!-- Test-->
+		
+	
+		
+</suite> <!-- Suite -->

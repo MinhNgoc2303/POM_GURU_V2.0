@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [NgocTest]">
+  <test thread-count="5" parallel="tests" name="TestWithChrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="76.0.3809.68"/>
+    <parameter name="url" value="http://demo.guru99.com/v4/"/>
+    <classes>
+      <class name="com.bankguru.scripts.NewCustomerScript">
+        <methods>
+          <include name="NC08_CityFiledEmpty"/>
+          <include name="NC20_PinFieldWithSpace"/>
+          <include name="NC30_CreateNewCustomer"/>
+          <include name="NC22_TelephoneFieldHaveSpace"/>
+          <include name="NC12_StateFieldEmpty"/>
+          <include name="NC17_PinFieldEmpty"/>
+          <include name="NC11_CityHaveSpace"/>
+          <include name="NC26_EmailFieldEmpty"/>
+          <include name="NC09_CityWithNumberic"/>
+          <include name="NC21_TelephoneFieldEmpty"/>
+          <include name="NC27_EmailFieldWithIncorrectFormat"/>
+          <include name="NC05_AddressEmplty"/>
+          <include name="NC18_PinFieldHave6Digits"/>
+          <include name="NC15_SateFieldWithSpace"/>
+          <include name="NC14_StateFieldWithSpecialCharacter"/>
+          <include name="AfterClass"/>
+          <include name="afterMethod"/>
+          <include name="NC13_StateFieldWithNumberic"/>
+          <include name="NC29_EmailFieldWithSpace"/>
+          <include name="NC06_AddressHaveSpace"/>
+          <include name="NC19_PinFieldWithSpecialCharcter"/>
+          <include name="NC03_SpecialCharacters"/>
+          <include name="NC01_NewCustomer01"/>
+          <include name="NC02_NumericCase"/>
+          <include name="NC16_PINFiledWithNumberic"/>
+          <include name="BeforeMethod"/>
+          <include name="BeforeClass"/>
+          <include name="NC10_CityWithSpecialCharacter"/>
+          <include name="NC25_TelephoneFieldWithSpecialCharacter"/>
+          <include name="NC04_FirstCharacterBlank"/>
+        </methods>
+      </class> <!-- com.bankguru.scripts.NewCustomerScript -->
+      <class name="com.bankguru.scripts.RegisterNewAccountScript">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="AfterClass"/>
+          <include name="BeforeClass"/>
+          <include name="RegisterScript"/>
+        </methods>
+      </class> <!-- com.bankguru.scripts.RegisterNewAccountScript -->
+    </classes>
+  </test> <!-- TestWithChrome(failed) -->
+</suite> <!-- Failed suite [NgocTest] -->
