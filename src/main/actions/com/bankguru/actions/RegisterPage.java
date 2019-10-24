@@ -1,8 +1,8 @@
 package com.bankguru.actions;
 
 import org.openqa.selenium.WebDriver;
-
-import com.bankguru.ui.RegisterPageUI;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import common.CommonFunctions;
 
@@ -11,23 +11,42 @@ public class RegisterPage extends CommonFunctions {
 	public RegisterPage(WebDriver driver) {
 		super(driver);
 	}
+	
+	//public static String EMAIL_TXT = "//input[@name='emailid']";
+	@FindBy(name = "emailid")
+	WebElement EMAIL_TXT;
+	
+	//public static String SUBMIT_BTN = "//input[@name='btnLogin']";
+	@FindBy(name = "btnLogin")
+	WebElement SUBMIT_BTN;
+	
+	//public static String USERNAME_LBL = "//td[contains(text(),'User ID :')]/following-sibling::td";
+	@FindBy(xpath = "//td[contains(text(),'User ID :')]/following-sibling::td")
+	WebElement USERNAME_LBL;
+	
+	//public static String PASSWORD_LBL = "//td[contains(text(),'Password :')]/following-sibling::td";
+	@FindBy(xpath = "//td[contains(text(),'Password :')]/following-sibling::td")
+	WebElement PASSWORD_LBL;
+	
+	
+	
 	public void inputEmail(String value) {
-		waitForElementVisible(RegisterPageUI.EMAIL_TXT);
-		inputElement(RegisterPageUI.EMAIL_TXT, value);
+		waitForElementVisible(EMAIL_TXT);
+		inputElement(EMAIL_TXT, value);
 	}
 	public void clickRegister() {
-		waitForElementVisible(RegisterPageUI.SUBMIT_BTN);
-		clickToElement(RegisterPageUI.SUBMIT_BTN);
+		waitForElementVisible(SUBMIT_BTN);
+		clickToElement(SUBMIT_BTN);
 	}
 
 	public String getUserName() {
-		waitForElementVisible(RegisterPageUI.USERNAME_LBL);
-		return getTextElement(RegisterPageUI.USERNAME_LBL);
+		waitForElementVisible(USERNAME_LBL);
+		return getTextElement(USERNAME_LBL);
 	}
 	
 	public String getPassword() {
-		waitForElementVisible(RegisterPageUI.PASSWORD_LBL);
-		return getTextElement(RegisterPageUI.PASSWORD_LBL);
+		waitForElementVisible(PASSWORD_LBL);
+		return getTextElement(PASSWORD_LBL);
 	}
 	public void openLogInBankGuru(String url) {
 		navigateToUrl(url);

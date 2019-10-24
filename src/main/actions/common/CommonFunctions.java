@@ -51,23 +51,20 @@ public class CommonFunctions {
 		driver.navigate().refresh();
 	}
 
-	public void clickToElement(String locator) {
-		WebElement element = driver.findElement(By.xpath(locator));
+	public void clickToElement(WebElement element) {
 		element.click();
 	}
 
-	public String getTextElement(String locator) {
-		WebElement element = driver.findElement(By.xpath(locator));
+	public String getTextElement(WebElement element) {
+		
 		return element.getText();
 	}
 
-	public void clearElement(String locator) {
-		WebElement element = driver.findElement(By.xpath(locator));
+	public void clearElement(WebElement element) {
 		element.clear();
 	}
 
-	public void inputElement(String locator, String value) {
-		WebElement element = driver.findElement(By.xpath(locator));
+	public void inputElement(WebElement element, String value) {
 		element.sendKeys(value);
 	}
 
@@ -182,8 +179,7 @@ public class CommonFunctions {
 		action.release();
 	}
 
-	public void sendKeyPress(String locator, Keys key) {
-		WebElement element = driver.findElement(By.xpath(locator));
+	public void sendKeyPress(WebElement element, Keys key) {
 		element.sendKeys(key);
 	}
 
@@ -222,24 +218,23 @@ public class CommonFunctions {
 		js.executeScript("$(locator).css('border', '4px solid blue'");
 	}
 
-	public void removeAttributeElement(String locator, String attribute) {
+	public void removeAttributeElement(WebElement element, String attribute) {
 		JavascriptExecutor javascript = (JavascriptExecutor) driver;
-		WebElement element = driver.findElement(By.xpath(locator));
 		javascript.executeScript("arguments[0].removeAttribute('" + attribute + "')", element);
 	}
 
-	public void waitForElementPresence(String locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 100);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-	}
+//	public void waitForElementPresence(WebElement element) {
+//		WebDriverWait wait = new WebDriverWait(driver, 100);
+//		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(element, childLocator)
+//	}
 
-	public void waitForElementVisible(String locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 100);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+	public void waitForElementVisible(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	public void waitForAlertPresence() {
-		WebDriverWait wait = new WebDriverWait(driver, 100);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.alertIsPresent());
 	}
 	

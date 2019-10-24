@@ -2,9 +2,8 @@ package com.bankguru.actions;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
-import com.bankguru.ui.EditCustomerPageUI;
-import com.bankguru.ui.NewCustomerPageUI;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import common.CommonFunctions;
 
@@ -14,136 +13,203 @@ public class NewCustomerPage extends CommonFunctions {
 		super(driver);
 	}
 
+	//public static String CUSTOMERNAME_TXT = "//input[@name='name']";
+	@FindBy(name = "name")
+	WebElement CUSTOMERNAME_TXT;
+	//public static String CUSTOMERNAME_MSG = "//label[@id='message']";
+	@FindBy(id = "message")
+	WebElement CUSTOMERNAME_MSG;
+	
+	//public static String ADDRESS_TXT = "//textarea[@name='addr']";
+	@FindBy(name = "addr")
+	WebElement ADDRESS_TXT;
+	//public static String ADDRESS_LBL = "//label[@id='message3']";
+	@FindBy(id = "message3")
+	WebElement ADDRESS_LBL;
+	
+	//public static String CITYFIELD_TXT= "//input[@name='city']";
+	@FindBy(name = "city")
+	WebElement CITYFIELD_TXT;
+	//public static String CITYFIELD_LBL = "//label[@id='message4']";
+	@FindBy(id = "message4")
+	WebElement CITYFIELD_LBL;
+	
+	//public static String STATEFIELD_TXT ="//input[@name='state']";
+	@FindBy(name = "state")
+	WebElement STATEFIELD_TXT;
+	//public static String STATEFIELD_LBL = "//label[@id='message5']";
+	@FindBy(id = "message5")
+	WebElement STATEFIELD_LBL;
+	
+	//public static String PINFIELD_TXT= "//input[@name='pinno']";
+	@FindBy(name = "pinno")
+	WebElement PINFIELD_TXT;
+	//public static String PINFIELD_LBL = "//label[@id='message6']";
+	@FindBy(id = "message6")
+	WebElement PINFIELD_LBL;
+	
+	//public static String TELEPHONEFIELD_TXT = "//input[@name='telephoneno']";
+	@FindBy(name = "telephoneno")
+	WebElement TELEPHONEFIELD_TXT;
+	//public static String TELEPHONEFIELD_LBL = "//label[@id='message7']";
+	@FindBy(id = "message7")
+	WebElement TELEPHONEFIELD_LBL;
+	
+	//public static String EMAILFIELD_TXT = "//input[@name='emailid']";
+	@FindBy(name = "emailid")
+	WebElement EMAILFIELD_TXT;
+	//public static String EMAILFIELD_LBL = "//label[@id='message9']";
+	@FindBy(id = "message9")
+	WebElement EMAILFIELD_LBL;
+	
+	//public static String DATEOFBIRTH_TXT = "//input[@name='dob']";
+	@FindBy(name = "dob")
+	WebElement DATEOFBIRTH_TXT;
+	
+	//public static String PASSWORDNEWCUSTOMER_TXT ="//input[@name='password']";
+	@FindBy(name = "password")
+	WebElement PASSWORDNEWCUSTOMER_TXT;
+	
+	//public static String SUBMITNEWCUSTOMER_BTN="//input[@name='sub']";
+	@FindBy(name = "sub")
+	WebElement SUBMITNEWCUSTOMER_BTN;
+	
+	//public static String CUSTOMERID_LBL="//td[contains(text(), 'Customer ID')]/following-sibling::td";
+	@FindBy(xpath = "//td[contains(text(), 'Customer ID')]/following-sibling::td")
+	WebElement CUSTOMERID_LBL;
+	
+	
+	
 	
 	public void pressKeysToCustomerName(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.CUSTOMERNAME_TXT);
-		sendKeyPress(NewCustomerPageUI.CUSTOMERNAME_TXT, key);
+		waitForElementVisible(CUSTOMERNAME_TXT);
+		sendKeyPress(CUSTOMERNAME_TXT, key);
 	}
 
 	public String getMessageCustomerName() {
-		waitForElementVisible(NewCustomerPageUI.CUSTOMERNAME_MSG);
-		return getTextElement(NewCustomerPageUI.CUSTOMERNAME_MSG);
+		waitForElementVisible(CUSTOMERNAME_MSG);
+		return getTextElement(CUSTOMERNAME_MSG);
 
 	}
 
 	public void inputCustomerName(String value) {
-		waitForElementVisible(NewCustomerPageUI.CUSTOMERNAME_TXT);
-		inputElement(NewCustomerPageUI.CUSTOMERNAME_TXT, value);
+		waitForElementVisible(CUSTOMERNAME_TXT);
+		inputElement(CUSTOMERNAME_TXT, value);
 	}
 	
 	
 	public void pressKeyToAddress(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.ADDRESS_TXT);
-		sendKeyPress(NewCustomerPageUI.ADDRESS_TXT, key);
+		waitForElementVisible(ADDRESS_TXT);
+		sendKeyPress(ADDRESS_TXT, key);
 	}
 
 	public String getMessageAdressField() {
-		waitForElementVisible(NewCustomerPageUI.ADDRESS_LBL);
-		return getTextElement(NewCustomerPageUI.ADDRESS_LBL);
+		waitForElementVisible(ADDRESS_LBL);
+		return getTextElement(ADDRESS_LBL);
 	}
 	
 	public void inputAddress(String value) {
-		waitForElementVisible(NewCustomerPageUI.ADDRESS_TXT);
-		inputElement(NewCustomerPageUI.ADDRESS_TXT, value);
+		waitForElementVisible(ADDRESS_TXT);
+		inputElement(ADDRESS_TXT, value);
 	}
 	
 	public void pressKeyToCityField(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.CITYFIELD_TXT);
-		sendKeyPress(NewCustomerPageUI.CITYFIELD_TXT, key);
+		waitForElementVisible(CITYFIELD_TXT);
+		sendKeyPress(CITYFIELD_TXT, key);
 	}
 	
 	public String getMessageCityField( ) {
-		waitForElementVisible(NewCustomerPageUI.CITYFIELD_LBL);
-		return getTextElement(NewCustomerPageUI.CITYFIELD_LBL);	
+		waitForElementVisible(CITYFIELD_LBL);
+		return getTextElement(CITYFIELD_LBL);	
 	}
 	
 	public void inputCityField(String value) {
-		waitForElementVisible(NewCustomerPageUI.CITYFIELD_TXT);
-		inputElement(NewCustomerPageUI.CITYFIELD_TXT, value);
+		waitForElementVisible(CITYFIELD_TXT);
+		inputElement(CITYFIELD_TXT, value);
 	}
 	
 	
 	public void pressKeyToStateField(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.STATEFIELD_TXT);
-		sendKeyPress(NewCustomerPageUI.STATEFIELD_TXT, key);
+		waitForElementVisible(STATEFIELD_TXT);
+		sendKeyPress(STATEFIELD_TXT, key);
 	}
 	
 	public String getMessageStateField( ) {
-		waitForElementVisible(NewCustomerPageUI.STATEFIELD_LBL);
-		return getTextElement(NewCustomerPageUI.STATEFIELD_LBL);	
+		waitForElementVisible(STATEFIELD_LBL);
+		return getTextElement(STATEFIELD_LBL);	
 	}
 	
 	public void inputStateField(String value) {
-		waitForElementVisible(NewCustomerPageUI.STATEFIELD_TXT);
-		inputElement(NewCustomerPageUI.STATEFIELD_TXT, value);
+		waitForElementVisible(STATEFIELD_TXT);
+		inputElement(STATEFIELD_TXT, value);
 	}
 	
 	
 	public void pressKeyToPINField(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.PINFIELD_TXT);
-		sendKeyPress(NewCustomerPageUI.PINFIELD_TXT, key);
+		waitForElementVisible(PINFIELD_TXT);
+		sendKeyPress(PINFIELD_TXT, key);
 	}
 	
 	public String getMessagePINField( ) {
-		waitForElementVisible(NewCustomerPageUI.PINFIELD_LBL);
-		return getTextElement(NewCustomerPageUI.PINFIELD_LBL);	
+		waitForElementVisible(PINFIELD_LBL);
+		return getTextElement(PINFIELD_LBL);	
 	}
 	
 	public void inputPINField(String value) {
-		waitForElementVisible(NewCustomerPageUI.PINFIELD_TXT);
-		inputElement(NewCustomerPageUI.PINFIELD_TXT, value);
+		waitForElementVisible(PINFIELD_TXT);
+		inputElement(PINFIELD_TXT, value);
 	}
 	
 	
 	public void pressKeyToTelephoneField(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.TELEPHONEFIELD_TXT);
-		sendKeyPress(NewCustomerPageUI.TELEPHONEFIELD_TXT, key);
+		waitForElementVisible(TELEPHONEFIELD_TXT);
+		sendKeyPress(TELEPHONEFIELD_TXT, key);
 	}
 	
 	public String getMessageTelephoneField( ) {
-		waitForElementVisible(NewCustomerPageUI.TELEPHONEFIELD_LBL);
-		return getTextElement(NewCustomerPageUI.TELEPHONEFIELD_LBL);	
+		waitForElementVisible(TELEPHONEFIELD_LBL);
+		return getTextElement(TELEPHONEFIELD_LBL);	
 	}
 	
 	public void inputTelephoneField(String value) {
-		waitForElementVisible(NewCustomerPageUI.TELEPHONEFIELD_TXT);
-		inputElement(NewCustomerPageUI.TELEPHONEFIELD_TXT, value);
+		waitForElementVisible(TELEPHONEFIELD_TXT);
+		inputElement(TELEPHONEFIELD_TXT, value);
 	}
 	
 	
 	public void pressKeyToEmailField(Keys key) {
-		waitForElementVisible(NewCustomerPageUI.EMAILFIELD_TXT);
-		sendKeyPress(NewCustomerPageUI.EMAILFIELD_TXT, key);
+		waitForElementVisible(EMAILFIELD_TXT);
+		sendKeyPress(EMAILFIELD_TXT, key);
 	}
 	
 	public String getMessageEmailField( ) {
-		waitForElementVisible(NewCustomerPageUI.EMAILFIELD_LBL);
-		return getTextElement(NewCustomerPageUI.EMAILFIELD_LBL);	
+		waitForElementVisible(EMAILFIELD_LBL);
+		return getTextElement(EMAILFIELD_LBL);	
 	}
 	
 	public void inputEmailField(String value) {
-		waitForElementVisible(NewCustomerPageUI.EMAILFIELD_TXT);
-		inputElement(NewCustomerPageUI.EMAILFIELD_TXT, value);
+		waitForElementVisible(EMAILFIELD_TXT);
+		inputElement(EMAILFIELD_TXT, value);
 	}
 	public void inputDateOfBirth(String value) {
-		waitForElementVisible(NewCustomerPageUI.DATEOFBIRTH_TXT);
-		removeAttributeElement(NewCustomerPageUI.DATEOFBIRTH_TXT, "type");
-		inputElement(NewCustomerPageUI.DATEOFBIRTH_TXT, value);
+		waitForElementVisible(DATEOFBIRTH_TXT);
+		removeAttributeElement(DATEOFBIRTH_TXT, "type");
+		inputElement(DATEOFBIRTH_TXT, value);
 	}
 
 	public void inputPasswordNewCustomer(String value) {
-		waitForElementVisible(NewCustomerPageUI.PASSWORDNEWCUSTOMER_TXT);
-		inputElement(NewCustomerPageUI.PASSWORDNEWCUSTOMER_TXT, value);
+		waitForElementVisible(PASSWORDNEWCUSTOMER_TXT);
+		inputElement(PASSWORDNEWCUSTOMER_TXT, value);
 	}
 	
 	public void clickSubmitNewCustomer() {
-		waitForElementVisible(NewCustomerPageUI.SUBMITNEWCUSTOMER_BTN);
-		clickToElement(NewCustomerPageUI.SUBMITNEWCUSTOMER_BTN);
+		waitForElementVisible(SUBMITNEWCUSTOMER_BTN);
+		clickToElement(SUBMITNEWCUSTOMER_BTN);
 	}
 	
 	public String getCustomerId() {
-		waitForElementVisible(NewCustomerPageUI.CUSTOMERID_LBL);
-		return getTextElement(NewCustomerPageUI.CUSTOMERID_LBL);
+		waitForElementVisible(CUSTOMERID_LBL);
+		return getTextElement(CUSTOMERID_LBL);
 		
 	}
 }

@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite parallel="tests" name="Failed suite [NgocTest]">
+  <test thread-count="5" parallel="tests" name="TestWithChrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="78.0.3904.70"/>
+    <parameter name="url" value="http://demo.guru99.com/v4/"/>
     <classes>
-      <class name="PracticeCSS.demo">
+      <class name="com.bankguru.scripts.NewCustomerScript">
         <methods>
-          <include name="Exercise02"/>
-          <include name="BeforeClass"/>
+          <include name="NC08_CityFiledEmpty"/>
+          <include name="NC20_PinFieldWithSpace"/>
+          <include name="NC30_CreateNewCustomer"/>
+          <include name="NC22_TelephoneFieldHaveSpace"/>
+          <include name="NC12_StateFieldEmpty"/>
+          <include name="NC17_PinFieldEmpty"/>
+          <include name="NC11_CityHaveSpace"/>
+          <include name="NC26_EmailFieldEmpty"/>
+          <include name="NC09_CityWithNumberic"/>
+          <include name="NC21_TelephoneFieldEmpty"/>
+          <include name="NC27_EmailFieldWithIncorrectFormat"/>
+          <include name="NC05_AddressEmplty"/>
+          <include name="NC18_PinFieldHave6Digits"/>
+          <include name="NC15_SateFieldWithSpace"/>
+          <include name="NC14_StateFieldWithSpecialCharacter"/>
           <include name="AfterClass"/>
+          <include name="afterMethod"/>
+          <include name="NC13_StateFieldWithNumberic"/>
+          <include name="NC29_EmailFieldWithSpace"/>
+          <include name="NC06_AddressHaveSpace"/>
+          <include name="NC19_PinFieldWithSpecialCharcter"/>
+          <include name="NC03_SpecialCharacters"/>
+          <include name="NC01_NewCustomer01"/>
+          <include name="NC02_NumericCase"/>
+          <include name="NC16_PINFiledWithNumberic"/>
+          <include name="BeforeMethod"/>
+          <include name="BeforeClass"/>
+          <include name="NC10_CityWithSpecialCharacter"/>
+          <include name="NC25_TelephoneFieldWithSpecialCharacter"/>
+          <include name="NC04_FirstCharacterBlank"/>
         </methods>
-      </class> <!-- PracticeCSS.demo -->
+      </class> <!-- com.bankguru.scripts.NewCustomerScript -->
+      <class name="com.bankguru.scripts.EditCustomerScript">
+        <methods>
+          <include name="EC04_ValidCustomerId"/>
+          <include name="EC13_StateWithNumeric"/>
+          <include name="BeforeClass"/>
+          <include name="EC10_CityNotNumberic"/>
+          <include name="EC08_AddressIsEmpty"/>
+          <include name="EC21_EmailEmpty"/>
+          <include name="AfterClass"/>
+          <include name="EC01_CustomerIdEmpty"/>
+          <include name="afterMethod"/>
+          <include name="EC19_TelephoneWithEmpty"/>
+          <include name="EC03_CustomerIdhaveSpecialCharacter"/>
+          <include name="EC11_CityCannotHaveSpecialCharacter"/>
+          <include name="EC20_TelephoneWithSpecialCharacter"/>
+          <include name="EC14_StateFieldWithSpecialCharacter"/>
+          <include name="EC15_PINMustBeNumeric"/>
+          <include name="EC22_EmailWithInvalidFormat"/>
+          <include name="EC12_StateFieldEmpty"/>
+          <include name="EC16_PINFieldEmpty"/>
+          <include name="BeforeMethod"/>
+          <include name="EC17_PINMustHave6Digits"/>
+          <include name="EC09_CityIsEmpty"/>
+          <include name="EC02_CustomerIdNotNumberic"/>
+          <include name="EC18_PINWithSpecialCharacter"/>
+        </methods>
+      </class> <!-- com.bankguru.scripts.EditCustomerScript -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- TestWithChrome(failed) -->
+</suite> <!-- Failed suite [NgocTest] -->

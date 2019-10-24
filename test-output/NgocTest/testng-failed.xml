@@ -3,7 +3,7 @@
 <suite parallel="tests" name="Failed suite [NgocTest]">
   <test thread-count="5" parallel="tests" name="TestWithChrome(failed)">
     <parameter name="browser" value="chrome"/>
-    <parameter name="version" value="76.0.3809.68"/>
+    <parameter name="version" value="78.0.3904.70"/>
     <parameter name="url" value="http://demo.guru99.com/v4/"/>
     <classes>
       <class name="com.bankguru.scripts.NewCustomerScript">
@@ -40,14 +40,33 @@
           <include name="NC04_FirstCharacterBlank"/>
         </methods>
       </class> <!-- com.bankguru.scripts.NewCustomerScript -->
-      <class name="com.bankguru.scripts.RegisterNewAccountScript">
+      <class name="com.bankguru.scripts.EditCustomerScript">
         <methods>
-          <include name="afterMethod"/>
-          <include name="AfterClass"/>
+          <include name="EC04_ValidCustomerId"/>
+          <include name="EC13_StateWithNumeric"/>
           <include name="BeforeClass"/>
-          <include name="RegisterScript"/>
+          <include name="EC10_CityNotNumberic"/>
+          <include name="EC08_AddressIsEmpty"/>
+          <include name="EC21_EmailEmpty"/>
+          <include name="AfterClass"/>
+          <include name="EC01_CustomerIdEmpty"/>
+          <include name="afterMethod"/>
+          <include name="EC19_TelephoneWithEmpty"/>
+          <include name="EC03_CustomerIdhaveSpecialCharacter"/>
+          <include name="EC11_CityCannotHaveSpecialCharacter"/>
+          <include name="EC20_TelephoneWithSpecialCharacter"/>
+          <include name="EC14_StateFieldWithSpecialCharacter"/>
+          <include name="EC15_PINMustBeNumeric"/>
+          <include name="EC22_EmailWithInvalidFormat"/>
+          <include name="EC12_StateFieldEmpty"/>
+          <include name="EC16_PINFieldEmpty"/>
+          <include name="BeforeMethod"/>
+          <include name="EC17_PINMustHave6Digits"/>
+          <include name="EC09_CityIsEmpty"/>
+          <include name="EC02_CustomerIdNotNumberic"/>
+          <include name="EC18_PINWithSpecialCharacter"/>
         </methods>
-      </class> <!-- com.bankguru.scripts.RegisterNewAccountScript -->
+      </class> <!-- com.bankguru.scripts.EditCustomerScript -->
     </classes>
   </test> <!-- TestWithChrome(failed) -->
 </suite> <!-- Failed suite [NgocTest] -->
